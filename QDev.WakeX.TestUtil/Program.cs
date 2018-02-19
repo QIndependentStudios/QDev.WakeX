@@ -1,4 +1,5 @@
 ﻿using QDev.WakeX.Core;
+using System;
 
 namespace QDev.WakeX.TestUtil
 {
@@ -7,7 +8,9 @@ namespace QDev.WakeX.TestUtil
         static void Main(string[] args)
         {
             var wakeService = new XboxWakeService();
-            wakeService.Wake();
+            Console.WriteLine("Attempting to wake Xbox...");
+            Console.WriteLine(wakeService.WakeAsync().Result);
+            Console.ReadKey();
         }
     }
 }
